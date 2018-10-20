@@ -39,6 +39,15 @@ window.onload=function(){
 		});
 	}
 
+	function ifLeaveArea(){
+		maze.addEventListener("mouseleave",function(){
+			if (starter === true){
+				status.innerHTML = "You Lose";
+				changeColor();
+			}
+		});
+	}
+
 	function ender(){
 		end.addEventListener("mouseover",()=>{
 			if (red === false){
@@ -56,6 +65,7 @@ window.onload=function(){
 
 	changeBoundary1();
 	start();
+	ifLeaveArea();
 	ender();
 
 }
